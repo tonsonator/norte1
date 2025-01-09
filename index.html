@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .options button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Program</h1>
+        <div id="quiz">
+            <div class="question" id="question">Question will appear here</div>
+            <div class="options">
+                <button onclick="checkAnswer(0)">Option 1</button>
+                <button onclick="checkAnswer(1)">Option 2</button>
+                <button onclick="checkAnswer(2)">Option 3</button>
+            </div>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "¿Qué tipo de voz narrativa usa Jonathan Edwards en 'Sinners in the Hands of an Angry God'?",
+                options: ["Primera persona", "Segunda persona plural", "Tercera persona"],
+                correct: 1
+            },
+            {
+                question: "¿Qué símbolo utiliza Phillis Wheatley en 'On Being Brought from Africa to America'?",
+                options: ["Diabolic die y angelic train", "Angel wings", "Burning bush"],
+                correct: 0
+            },
+            {
+                question: "¿Qué imaginería utiliza James Fenimore Cooper en 'The Last of the Mohicans'?",
+                options: ["Paisajes salvajes y escarpados", "Ciudades modernas", "Maquinaria industrial"],
+                correct: 0
+            },
+            {
+                question: "¿Qué figura retórica utiliza Anne Bradstreet en 'To My Dear and Loving Husband'?",
+                options: ["Hipérbole", "Metonimia", "Paradoja"],
+                correct: 0
+            },
+            {
+                question: "¿Qué motivo narrativo caracteriza 'A Narrative of the Captivity and Restoration' de Mary Rowlandson?",
+                options: ["La divina providencia", "La expansión colonial", "El conflicto interno"],
+                correct: 0
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const quiz = document.getElementById("quiz");
+            const questionElement = document.getElementById("question");
+            const options = document.querySelectorAll(".options button");
+
+            if (currentQuestion < questions.length) {
+                const q = questions[currentQuestion];
+                questionElement.textContent = q.question;
+                options.forEach((button, index) => {
+                    button.textContent = q.options[index];
+                    button.disabled = false;
+                });
+            } else {
+                quiz.style.display = "none";
+                document.getElementById("result").textContent = `Has finalizado el cuestionario. Puntaje: ${score}/${questions.length}`;
+            }
+        }
+
+        function checkAnswer(selected) {
+            const q = questions[currentQuestion];
+            const options = document.querySelectorAll(".options button");
+
+            if (selected === q.correct) {
+                score++;
+                alert("¡Correcto!");
+            } else {
+                alert(`Incorrecto. La respuesta correcta era: ${q.options[q.correct]}`);
+            }
+
+            options.forEach((button) => (button.disabled = true));
+            currentQuestion++;
+            setTimeout(loadQuestion, 1000);
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
