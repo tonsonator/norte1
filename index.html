@@ -68,152 +68,506 @@
 
     <script>
         const questions = [
-            {
-                question: "¿Qué tipo de voz narrativa usa Jonathan Edwards en 'Sinners in the Hands of an Angry God'?",
-                options: ["Segunda persona plural", "Primera persona", "Tercera persona"],
-                correct: 0
-            },
-            {
-                question: "¿Qué símbolo utiliza Phillis Wheatley en 'On Being Brought from Africa to America'?",
-                options: ["Diabolic die y angelic train", "Chains of freedom", "Candlelight hope"],
-                correct: 0
-            },
-            {
-                question: "¿Qué imaginería utiliza James Fenimore Cooper en 'The Last of the Mohicans'?",
-                options: ["Paisajes salvajes y escarpados", "Campos industriales", "Escenarios urbanos"],
-                correct: 0
-            },
-            {
-                question: "¿Qué figura retórica destaca en 'To My Dear and Loving Husband' de Anne Bradstreet?",
-                options: ["Hipérbole", "Ironía", "Paradoja"],
-                correct: 0
-            },
-            {
-                question: "¿Qué motivo narrativo caracteriza 'A Narrative of the Captivity and Restoration' de Mary Rowlandson?",
-                options: ["La divina providencia", "El conflicto amoroso", "La expansión comercial"],
-                correct: 0
-            },
-            {
-                question: "¿En qué obra describe Olaudah Equiano su experiencia como esclavo?",
-                options: ["The Interesting Narrative of the Life of Olaudah Equiano", "Chains of Freedom", "Memoirs of a Slave"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor escribió 'Nature' y promovió el transcendentalismo?",
-                options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Jonathan Edwards"],
-                correct: 0
-            },
-            {
-                question: "¿Qué tema comparten Phillis Wheatley y Olaudah Equiano en sus obras?",
-                options: ["La libertad", "El puritanismo", "La expansión colonial"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor utilizó referencias bíblicas para infundir miedo en sus sermones?",
-                options: ["Jonathan Edwards", "William Bradford", "John Smith"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor mezcló hechos y ficción en 'The General History of Virginia' para promover la colonización inglesa?",
-                options: ["John Smith", "William Bradford", "James Fenimore Cooper"],
-                correct: 0
-            },
-            {
-                question: "¿Qué tipo de estilo utiliza William Bradford en 'Of Plymouth Plantation'?",
-                options: ["Estilo llano y directo", "Estilo ornamentado", "Estilo poético"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor escribió 'Walden' y abogó por una vida sencilla?",
-                options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Jonathan Edwards"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor es conocido como el 'Padre de la ficción americana'?",
-                options: ["Washington Irving", "James Fenimore Cooper", "John Smith"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor puritano describió la vida en la colonia de Plymouth?",
-                options: ["William Bradford", "Anne Bradstreet", "Mary Rowlandson"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor promovió la desobediencia civil como forma de protesta pacífica?",
-                options: ["Henry David Thoreau", "Benjamin Franklin", "William Bradford"],
-                correct: 0
-            },
-            {
-                question: "¿Qué figura retórica es común en los sermones de Jonathan Edwards?",
-                options: ["Imaginería sensorial", "Hipérbole", "Aliteración"],
-                correct: 0
-            },
-            {
-                question: "¿Qué tema conecta las obras de Phillis Wheatley y Mary Rowlandson?",
-                options: ["La providencia divina", "La expansión colonial", "La autosuficiencia"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor abogó por la autosuficiencia como protesta contra la modernidad?",
-                options: ["Henry David Thoreau", "Ralph Waldo Emerson", "John Smith"],
-                correct: 0
-            },
-            {
-                question: "¿Qué obra conecta a Phillis Wheatley con la poesía política americana?",
-                options: ["To His Excellency General Washington", "On Being Brought from Africa to America", "To the University of Cambridge"],
-                correct: 0
-            },
-            {
-                question: "¿Qué autor utilizó la naturaleza como un símbolo de pureza?",
-                options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Jonathan Edwards"],
-                correct: 1
-            },
-            {
-                question: "¿Qué tema recurrente aborda Anne Bradstreet en sus poemas?",
-                options: ["El amor y la fe", "La política y la guerra", "La economía y el comercio"],
-                correct: 0
-            },
-            {
-                question: "¿Cuál fue el propósito principal de William Bradford al escribir 'Of Plymouth Plantation'?",
-                options: ["Registrar la providencia divina", "Documentar la expansión económica", "Crear una novela histórica"],
-                correct: 0
-            },
-            {
-                question: "¿Qué simboliza la 'cadena rota' en los poemas de Phillis Wheatley?",
-                options: ["La libertad", "La pobreza", "La familia"],
-                correct: 0
-            },
-            {
-                question: "¿Qué movimiento literario influenció a Ralph Waldo Emerson?",
-                options: ["Transcendentalismo", "Romanticismo oscuro", "Ilustración"],
-                correct: 0
-            },
-            {
-                question: "¿Qué caracteriza el estilo de Henry David Thoreau en 'Walden'?",
-                options: ["Prosa reflexiva", "Ritmo poético", "Estilo épico"],
-                correct: 0
-            },
-            {
-                question: "¿En qué se basa principalmente la narrativa de Mary Rowlandson?",
-                options: ["Su experiencia personal de cautiverio", "Relatos de viajeros europeos", "Cuentos ficticios"],
-                correct: 0
-            },
-            {
-                question: "¿Qué elemento destaca en 'The Last of the Mohicans' de James Fenimore Cooper?",
-                options: ["La representación de los nativos americanos", "La crítica a la revolución industrial", "La exaltación de la vida urbana"],
-                correct: 0
-            },
-            {
-                question: "¿Qué tema central aborda Olaudah Equiano en su autobiografía?",
-                options: ["Los horrores de la esclavitud", "La expansión colonial", "El comercio marítimo"],
-                correct: 0
-            },
-            {
-                question: "¿Qué distingue a Washington Irving en la literatura americana?",
-                options: ["Ser el padre de la ficción americana", "Introducir la poesía épica", "Escribir relatos puritanos"],
-                correct: 0
-            },
-            // Add more questions here until 100 total
+{
+    question: "¿Qué tipo de voz narrativa utiliza Jonathan Edwards en Sinners in the Hands of an Angry God?",
+    options: ["Segunda persona plural", "Primera persona singular", "Tercera persona"],
+    correct: 0
+},
+{
+    question: "¿Qué símbolo utiliza Phillis Wheatley en On Being Brought from Africa to America para destacar la salvación cristiana?",
+    options: ["Diabolic die y angelic train", "Chains of freedom", "Broken chains"],
+    correct: 0
+},
+{
+    question: "¿Qué imaginería utiliza James Fenimore Cooper en The Last of the Mohicans?",
+    options: ["Paisajes salvajes y escarpados", "Campos agrícolas", "Paisajes urbanos"],
+    correct: 0
+},
+{
+    question: "¿Qué figura retórica destaca en To My Dear and Loving Husband de Anne Bradstreet?",
+    options: ["Hipérbole", "Ironía", "Metáfora"],
+    correct: 0
+},
+{
+    question: "¿Qué motivo narrativo caracteriza A Narrative of the Captivity and Restoration de Mary Rowlandson?",
+    options: ["La divina providencia", "El conflicto amoroso", "La crítica al colonialismo"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió The Interesting Narrative of the Life of Olaudah Equiano?",
+    options: ["Olaudah Equiano", "Phillis Wheatley", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió Nature y promovió el transcendentalismo?",
+    options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué tema comparten Phillis Wheatley y Olaudah Equiano en sus obras?",
+    options: ["La libertad y la religión", "El puritanismo", "La expansión colonial"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utilizó referencias bíblicas para infundir miedo en sus sermones?",
+    options: ["Jonathan Edwards", "John Smith", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió The General History of Virginia para promover la colonización inglesa?",
+    options: ["John Smith", "James Fenimore Cooper", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué obra de Phillis Wheatley celebra la llegada del cristianismo mientras critica la esclavitud?",
+    options: ["On Being Brought from Africa to America", "To His Excellency General Washington", "To the University of Cambridge"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió Walden y abogó por una vida sencilla?",
+    options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué autor es conocido como el 'Padre de la ficción americana'?",
+    options: ["Washington Irving", "James Fenimore Cooper", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué autor puritano describió la vida en la colonia de Plymouth?",
+    options: ["William Bradford", "Mary Rowlandson", "Anne Bradstreet"],
+    correct: 0
+},
+{
+    question: "¿Qué autor promovió la desobediencia civil como forma de protesta pacífica?",
+    options: ["Henry David Thoreau", "Benjamin Franklin", "Ralph Waldo Emerson"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de estilo utiliza William Bradford en Of Plymouth Plantation?",
+    options: ["Estilo llano y directo", "Estilo ornamentado", "Estilo poético"],
+    correct: 0
+},
+{
+    question: "¿Qué figura retórica es común en los sermones de Jonathan Edwards?",
+    options: ["Imaginería sensorial", "Aliteración", "Ironía"],
+    correct: 0
+},
+{
+    question: "¿Qué autor puritano escribió en un estilo llano sobre la providencia divina?",
+    options: ["William Bradford", "Anne Bradstreet", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué autor abogó por la autosuficiencia como protesta contra la modernidad?",
+    options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Benjamin Franklin"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió sobre la desaparición de los nativos americanos en la frontera?",
+    options: ["James Fenimore Cooper", "Washington Irving", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué tono utiliza Olaudah Equiano en The Interesting Narrative para contrastar esclavitud y libertad?",
+    options: ["Angustiado pero esperanzador", "Crítico y sarcástico", "Neutro y distante"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de imaginería utiliza Ralph Waldo Emerson en Nature?",
+    options: ["Visual y espiritual", "Industrial y mecánica", "Religiosa y simbólica"],
+    correct: 0
+},
+{
+    question: "¿Qué moral subyace en las obras de Anne Bradstreet sobre la vida puritana?",
+    options: ["Aceptar la voluntad de Dios", "Criticar la estructura social", "Fomentar la independencia femenina"],
+    correct: 0
+},
+{
+    question: "¿Qué autor usa un tono acusatorio para criticar la hipocresía cristiana en On Being Brought from Africa to America?",
+    options: ["Phillis Wheatley", "Olaudah Equiano", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué autor mezcla hechos y ficción en The Alhambra?",
+    options: ["Washington Irving", "James Fenimore Cooper", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué simboliza el paisaje salvaje en The Last of the Mohicans?",
+    options: ["Libertad y conflicto", "Destrucción y muerte", "Progreso y modernidad"],
+    correct: 0
+},
+{
+    question: "¿Qué autor relaciona la naturaleza con la espiritualidad en Nature?",
+    options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué obra conecta a Phillis Wheatley con la poesía política americana?",
+    options: ["To His Excellency General Washington", "On Being Brought from Africa to America", "To the University of Cambridge"],
+    correct: 0
+},
+{
+    question: "¿Qué obra de Jonathan Edwards representa el Gran Despertar religioso?",
+    options: ["Sinners in the Hands of an Angry God", "A Divine and Supernatural Light", "Religious Affections"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió Civil Disobedience?",
+    options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Benjamin Franklin"],
+    correct: 0
+},
+{
+    question: "¿Qué diferencia clave existe entre la visión de los nativos americanos en John Smith y Mary Rowlandson?",
+    options: ["Smith los representa como salvajes, Rowlandson los humaniza durante su cautiverio", "Ambos los describen como aliados", "Smith los idealiza, Rowlandson los demoniza completamente"],
+    correct: 0
+},
+{
+    question: "¿Cómo se comparan William Bradford y Benjamin Franklin respecto al concepto de 'self-made man'?",
+    options: ["Bradford atribuye todo a Dios, Franklin a la autosuperación personal", "Ambos enfatizan la providencia divina", "Bradford promueve el comercio, Franklin el progreso tecnológico"],
+    correct: 0
+},
+{
+    question: "¿Qué comparten Phillis Wheatley y Olaudah Equiano en su tratamiento de la religión?",
+    options: ["La redención cristiana como tema central", "La crítica abierta a la esclavitud", "La representación de África como un paraíso perdido"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza imaginería explícita del infierno para captar la atención de su audiencia?",
+    options: ["Jonathan Edwards", "William Bradford", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Cómo difieren Ralph Waldo Emerson y Henry David Thoreau en su visión de la naturaleza?",
+    options: ["Emerson la ve como espiritual, Thoreau como práctica y autosuficiente", "Thoreau la rechaza, Emerson la adora", "Ambos promueven la industrialización de la naturaleza"],
+    correct: 0
+},
+{
+    question: "¿Qué autor emplea un estilo más ornamentado: Anne Bradstreet o William Bradford?",
+    options: ["Anne Bradstreet", "William Bradford", "Ambos comparten el mismo estilo"],
+    correct: 0
+},
+{
+    question: "¿Qué tema común aparece en las obras de Phillis Wheatley y Jonathan Edwards?",
+    options: ["La salvación espiritual", "La crítica al colonialismo", "La exaltación de la autosuficiencia"],
+    correct: 0
+},
+{
+    question: "¿Cómo se refleja el romanticismo en las obras de Washington Irving y James Fenimore Cooper?",
+    options: ["Ambos idealizan el pasado y utilizan elementos naturales como símbolos", "Ambos critican el progreso tecnológico", "Irving enfatiza la ciudad, Cooper la naturaleza"],
+    correct: 0
+},
+{
+    question: "¿Qué simboliza el 'diabolic die' en On Being Brought from Africa to America?",
+    options: ["El prejuicio racial", "La riqueza colonial", "La opresión económica"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza imágenes visuales y sensoriales para describir la naturaleza?",
+    options: ["Henry David Thoreau", "Jonathan Edwards", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué obra de Mary Rowlandson narra su cautiverio entre los nativos americanos?",
+    options: ["A Narrative of the Captivity and Restoration", "Of Plymouth Plantation", "The General History of Virginia"],
+    correct: 0
+},
+{
+    question: "¿Qué representa el concepto de 'Manifest Destiny' en las obras de John Smith?",
+    options: ["La justificación para la expansión colonial", "El comercio marítimo con Europa", "La crítica al sistema puritano"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de tono predomina en Of Plymouth Plantation?",
+    options: ["Esperanzador y religioso", "Crítico y satírico", "Neutro y documental"],
+    correct: 0
+},
+{
+    question: "¿Qué figura retórica es frecuente en los poemas de Phillis Wheatley?",
+    options: ["Personificación", "Metonimia", "Hipérbole"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió sobre la libertad como un tema recurrente?",
+    options: ["Olaudah Equiano", "William Bradford", "Anne Bradstreet"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de lenguaje utiliza Jonathan Edwards en sus sermones?",
+    options: ["Figurativo y aterrador", "Neutro y documental", "Formal y técnico"],
+    correct: 0
+},
+{
+    question: "¿Qué autor compara la experiencia humana con una 'redención espiritual'?",
+    options: ["Phillis Wheatley", "Olaudah Equiano", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de voz narrativa usa Washington Irving en The Legend of Sleepy Hollow?",
+    options: ["Tercera persona omnisciente", "Primera persona", "Segunda persona"],
+    correct: 0
+},
+{
+    question: "¿Qué autor enfatiza la individualidad como parte de su visión filosófica?",
+    options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Benjamin Franklin"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió sobre su vida como esclavo y su eventual libertad?",
+    options: ["Olaudah Equiano", "Phillis Wheatley", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué autor describe la naturaleza como una fuente de verdad y moralidad en Walden?",
+    options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Washington Irving"],
+    correct: 0
+},
+{
+    question: "¿Qué obra incluye el pacto del Mayflower como un momento clave?",
+    options: ["Of Plymouth Plantation", "A Narrative of the Captivity and Restoration", "The General History of Virginia"],
+    correct: 0
+},
+{
+    question: "¿Qué autor asocia el puritanismo con la lucha interna en sus poemas?",
+    options: ["Anne Bradstreet", "Mary Rowlandson", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué figura retórica se utiliza frecuentemente en los sermones de Jonathan Edwards?",
+    options: ["Metáforas visuales", "Paradojas complejas", "Ironía literaria"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utilizó su obra para criticar la hipocresía en la sociedad cristiana?",
+    options: ["Phillis Wheatley", "Jonathan Edwards", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué obra describe el 'cautiverio' como una prueba de fe?",
+    options: ["A Narrative of the Captivity and Restoration", "The Interesting Narrative of the Life of Olaudah Equiano", "Sinners in the Hands of an Angry God"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza un estilo llano y directo para describir la vida colonial?",
+    options: ["William Bradford", "Anne Bradstreet", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué tema común se encuentra en las obras de Anne Bradstreet y William Bradford?",
+    options: ["La providencia divina", "La expansión colonial", "La autosuficiencia personal"],
+    correct: 0
+},
+{
+    question: "¿Qué representa la 'providencia divina' en las obras de los puritanos?",
+    options: ["La guía de Dios en los eventos humanos", "El éxito comercial", "El progreso científico"],
+    correct: 0
+},
+{
+    question: "¿Qué autor mezcla narrativas de aventuras con propaganda política?",
+    options: ["John Smith", "James Fenimore Cooper", "Washington Irving"],
+    correct: 0
+},
+{
+    question: "¿Qué técnica narrativa se destaca en The Last of the Mohicans?",
+    options: ["Descripción vívida de paisajes", "Uso de monólogos interiores", "Narración epistolar"],
+    correct: 0
+},
+{
+    question: "¿Qué autor enfatiza el individualismo como una virtud central en sus ensayos?",
+    options: ["Ralph Waldo Emerson", "Benjamin Franklin", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza metáforas para describir la relación entre Dios y la humanidad?",
+    options: ["Jonathan Edwards", "Phillis Wheatley", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza una narración subjetiva para destacar sus experiencias?",
+    options: ["Olaudah Equiano", "Mary Rowlandson", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de estructura narrativa predomina en Sinners in the Hands of an Angry God?",
+    options: ["Predicación directa con imaginería sensorial", "Narrativa en primera persona", "Diálogos ficticios"],
+    correct: 0
+},
+{
+    question: "¿Qué obra utiliza un simbolismo fuerte para criticar la esclavitud?",
+    options: ["On Being Brought from Africa to America", "The Interesting Narrative of the Life of Olaudah Equiano", "A Narrative of the Captivity and Restoration"],
+    correct: 0
+},
+{
+    question: "¿Qué autor emplea un tono didáctico para guiar a las generaciones futuras?",
+    options: ["William Bradford", "Ralph Waldo Emerson", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué autor describe la colonización como una aventura heroica?",
+    options: ["John Smith", "James Fenimore Cooper", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza un tono melancólico para describir la desaparición de los nativos americanos?",
+    options: ["James Fenimore Cooper", "John Smith", "Washington Irving"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de estilo literario mezcla ficción y realismo en The Alhambra?",
+    options: ["Romántico con elementos mágicos", "Puritano y documental", "Modernista e introspectivo"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza la naturaleza como un personaje central en su obra?",
+    options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué tema conecta las obras de Phillis Wheatley y Mary Rowlandson?",
+    options: ["La providencia divina", "La crítica al colonialismo", "La autosuficiencia personal"],
+    correct: 0
+},
+{
+    question: "¿Cómo contrasta el concepto de libertad en las obras de Olaudah Equiano y Phillis Wheatley?",
+    options: ["Equiano la ve como un viaje físico, Wheatley como espiritual", "Ambos la ven como una condición política", "Equiano la rechaza, Wheatley la acepta"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza imágenes vívidas del infierno para impactar a su audiencia?",
+    options: ["Jonathan Edwards", "John Smith", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué obra describe la lucha de los puritanos para sobrevivir en el Nuevo Mundo?",
+    options: ["Of Plymouth Plantation", "A Narrative of the Captivity and Restoration", "The General History of Virginia"],
+    correct: 0
+},
+{
+    question: "¿Qué autor enfatiza la autosuficiencia como un acto de rebelión?",
+    options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Benjamin Franklin"],
+    correct: 0
+},
+{
+    question: "¿Qué técnica narrativa utiliza John Smith para distanciarse de su narrativa?",
+    options: ["Escribir en tercera persona", "Usar diálogos ficticios", "Incluir relatos de otros"],
+    correct: 0
+},
+{
+    question: "¿Qué obra conecta la esclavitud con la redención espiritual?",
+    options: ["On Being Brought from Africa to America", "The Interesting Narrative of the Life of Olaudah Equiano", "A Narrative of the Captivity and Restoration"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza referencias bíblicas para justificar sus puntos de vista?",
+    options: ["Jonathan Edwards", "William Bradford", "Phillis Wheatley"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de simbolismo aparece en The Interesting Narrative of the Life of Olaudah Equiano?",
+    options: ["La lucha entre luz y oscuridad", "La cadena rota como símbolo de libertad", "La tierra prometida como objetivo final"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió durante el Gran Despertar religioso?",
+    options: ["Jonathan Edwards", "William Bradford", "Anne Bradstreet"],
+    correct: 0
+},
+{
+    question: "¿Qué autor mezcla tradiciones europeas con folklore americano en sus obras?",
+    options: ["Washington Irving", "James Fenimore Cooper", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué autor describe los desafíos del asentamiento colonial en Plymouth?",
+    options: ["William Bradford", "Mary Rowlandson", "John Smith"],
+    correct: 0
+},
+{
+    question: "¿Qué obra conecta el romanticismo con la descripción de paisajes exóticos?",
+    options: ["The Alhambra", "The Last of the Mohicans", "Nature"],
+    correct: 0
+},
+{
+    question: "¿Qué autor abogó por la simplicidad como una forma de vida espiritual?",
+    options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué autor describe la 'expansión hacia el oeste' como un conflicto moral?",
+    options: ["James Fenimore Cooper", "John Smith", "Washington Irving"],
+    correct: 0
+},
+{
+    question: "¿Qué autor puritano criticó su propia fe a través de sus obras?",
+    options: ["Anne Bradstreet", "Mary Rowlandson", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué obra conecta el puritanismo con la lucha interna?",
+    options: ["A Narrative of the Captivity and Restoration", "To My Dear and Loving Husband", "Of Plymouth Plantation"],
+    correct: 0
+},
+{
+    question: "¿Qué autor escribió para justificar la colonización inglesa?",
+    options: ["John Smith", "William Bradford", "James Fenimore Cooper"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de figuras retóricas destacan en los poemas de Phillis Wheatley?",
+    options: ["Hipérboles y personificaciones", "Paradojas y metáforas", "Ironías y metonimias"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza un tono esperanzador para describir la comunión con la naturaleza?",
+    options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué obra destaca el poder del miedo como herramienta retórica?",
+    options: ["Sinners in the Hands of an Angry God", "The Interesting Narrative of the Life of Olaudah Equiano", "The General History of Virginia"],
+    correct: 0
+},
+{
+    question: "¿Qué autor describe su vida como un ejemplo de autosuperación?",
+    options: ["Benjamin Franklin", "Olaudah Equiano", "William Bradford"],
+    correct: 0
+},
+{
+    question: "¿Qué tipo de simbolismo utiliza Anne Bradstreet en sus poemas?",
+    options: ["La lucha entre emociones humanas y fe", "El conflicto entre naturaleza y progreso", "El contraste entre riqueza y pobreza"],
+    correct: 0
+},
+{
+    question: "¿Qué tema conecta las obras de William Bradford y Jonathan Edwards?",
+    options: ["La providencia divina", "La crítica al materialismo", "La lucha contra la esclavitud"],
+    correct: 0
+},
+{
+    question: "¿Qué obra utiliza imágenes de la naturaleza como símbolo de pureza?",
+    options: ["Nature", "Walden", "Of Plymouth Plantation"],
+    correct: 0
+},
+{
+    question: "¿Qué autor combina narrativas históricas con comentarios filosóficos?",
+    options: ["Washington Irving", "James Fenimore Cooper", "Ralph Waldo Emerson"],
+    correct: 0
+},
+{
+    question: "¿Qué figura retórica utiliza Jonathan Edwards para describir la relación entre Dios y los pecadores?",
+    options: ["Metáforas de caída y fuego", "Ironías y juegos de palabras", "Símiles de luz y esperanza"],
+    correct: 0
+},
+{
+    question: "¿Qué autor describe su viaje espiritual como un paralelo a su libertad física?",
+    options: ["Olaudah Equiano", "Phillis Wheatley", "Jonathan Edwards"],
+    correct: 0
+},
+{
+    question: "¿Qué autor utiliza un estilo ornamentado para describir paisajes exóticos?",
+    options: ["Washington Irving", "James Fenimore Cooper", "John Smith"],
+    correct: 0
+}
         ];
 
         let currentQuestion = 0;
