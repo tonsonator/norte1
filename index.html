@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas Norte 1</title>
+    <title>Quiz Program</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,13 +56,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Preguntas Norte 1</h1>
+        <h1>Quiz Program</h1>
         <div id="quiz">
             <div class="question" id="question">Question will appear here</div>
-            <div class="options">
-                <button onclick="checkAnswer(0)">Option 1</button>
-                <button onclick="checkAnswer(1)">Option 2</button>
-                <button onclick="checkAnswer(2)">Option 3</button>
+            <div class="options" id="options">
+                <!-- Options will be dynamically generated -->
             </div>
         </div>
         <div class="result" id="result"></div>
@@ -72,45 +70,180 @@
         const questions = [
             {
                 question: "¿Qué tipo de voz narrativa usa Jonathan Edwards en 'Sinners in the Hands of an Angry God'?",
-                options: ["Primera persona", "Segunda persona plural", "Tercera persona"],
-                correct: 1
+                options: ["Segunda persona plural", "Primera persona", "Tercera persona"],
+                correct: 0
             },
             {
                 question: "¿Qué símbolo utiliza Phillis Wheatley en 'On Being Brought from Africa to America'?",
-                options: ["Diabolic die y angelic train", "Angel wings", "Burning bush"],
+                options: ["Diabolic die y angelic train", "Chains of freedom", "Candlelight hope"],
                 correct: 0
             },
             {
                 question: "¿Qué imaginería utiliza James Fenimore Cooper en 'The Last of the Mohicans'?",
-                options: ["Paisajes salvajes y escarpados", "Ciudades modernas", "Maquinaria industrial"],
+                options: ["Paisajes salvajes y escarpados", "Campos industriales", "Escenarios urbanos"],
                 correct: 0
             },
             {
-                question: "¿Qué figura retórica utiliza Anne Bradstreet en 'To My Dear and Loving Husband'?",
-                options: ["Hipérbole", "Metonimia", "Paradoja"],
+                question: "¿Qué figura retórica destaca en 'To My Dear and Loving Husband' de Anne Bradstreet?",
+                options: ["Hipérbole", "Ironía", "Paradoja"],
                 correct: 0
             },
             {
                 question: "¿Qué motivo narrativo caracteriza 'A Narrative of the Captivity and Restoration' de Mary Rowlandson?",
-                options: ["La divina providencia", "La expansión colonial", "El conflicto interno"],
+                options: ["La divina providencia", "El conflicto amoroso", "La expansión comercial"],
                 correct: 0
-            }
+            },
+            {
+                question: "¿En qué obra describe Olaudah Equiano su experiencia como esclavo?",
+                options: ["The Interesting Narrative of the Life of Olaudah Equiano", "Chains of Freedom", "Memoirs of a Slave"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor escribió 'Nature' y promovió el transcendentalismo?",
+                options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Jonathan Edwards"],
+                correct: 0
+            },
+            {
+                question: "¿Qué tema comparten Phillis Wheatley y Olaudah Equiano en sus obras?",
+                options: ["La libertad", "El puritanismo", "La expansión colonial"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor utilizó referencias bíblicas para infundir miedo en sus sermones?",
+                options: ["Jonathan Edwards", "William Bradford", "John Smith"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor mezcló hechos y ficción en 'The General History of Virginia' para promover la colonización inglesa?",
+                options: ["John Smith", "William Bradford", "James Fenimore Cooper"],
+                correct: 0
+            },
+            {
+                question: "¿Qué tipo de estilo utiliza William Bradford en 'Of Plymouth Plantation'?",
+                options: ["Estilo llano y directo", "Estilo ornamentado", "Estilo poético"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor escribió 'Walden' y abogó por una vida sencilla?",
+                options: ["Henry David Thoreau", "Ralph Waldo Emerson", "Jonathan Edwards"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor es conocido como el 'Padre de la ficción americana'?",
+                options: ["Washington Irving", "James Fenimore Cooper", "John Smith"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor puritano describió la vida en la colonia de Plymouth?",
+                options: ["William Bradford", "Anne Bradstreet", "Mary Rowlandson"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor promovió la desobediencia civil como forma de protesta pacífica?",
+                options: ["Henry David Thoreau", "Benjamin Franklin", "William Bradford"],
+                correct: 0
+            },
+            {
+                question: "¿Qué figura retórica es común en los sermones de Jonathan Edwards?",
+                options: ["Imaginería sensorial", "Hipérbole", "Aliteración"],
+                correct: 0
+            },
+            {
+                question: "¿Qué tema conecta las obras de Phillis Wheatley y Mary Rowlandson?",
+                options: ["La providencia divina", "La expansión colonial", "La autosuficiencia"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor abogó por la autosuficiencia como protesta contra la modernidad?",
+                options: ["Henry David Thoreau", "Ralph Waldo Emerson", "John Smith"],
+                correct: 0
+            },
+            {
+                question: "¿Qué obra conecta a Phillis Wheatley con la poesía política americana?",
+                options: ["To His Excellency General Washington", "On Being Brought from Africa to America", "To the University of Cambridge"],
+                correct: 0
+            },
+            {
+                question: "¿Qué autor utilizó la naturaleza como un símbolo de pureza?",
+                options: ["Ralph Waldo Emerson", "Henry David Thoreau", "Jonathan Edwards"],
+                correct: 1
+            },
+            {
+                question: "¿Qué tema recurrente aborda Anne Bradstreet en sus poemas?",
+                options: ["El amor y la fe", "La política y la guerra", "La economía y el comercio"],
+                correct: 0
+            },
+            {
+                question: "¿Cuál fue el propósito principal de William Bradford al escribir 'Of Plymouth Plantation'?",
+                options: ["Registrar la providencia divina", "Documentar la expansión económica", "Crear una novela histórica"],
+                correct: 0
+            },
+            {
+                question: "¿Qué simboliza la 'cadena rota' en los poemas de Phillis Wheatley?",
+                options: ["La libertad", "La pobreza", "La familia"],
+                correct: 0
+            },
+            {
+                question: "¿Qué movimiento literario influenció a Ralph Waldo Emerson?",
+                options: ["Transcendentalismo", "Romanticismo oscuro", "Ilustración"],
+                correct: 0
+            },
+            {
+                question: "¿Qué caracteriza el estilo de Henry David Thoreau en 'Walden'?",
+                options: ["Prosa reflexiva", "Ritmo poético", "Estilo épico"],
+                correct: 0
+            },
+            {
+                question: "¿En qué se basa principalmente la narrativa de Mary Rowlandson?",
+                options: ["Su experiencia personal de cautiverio", "Relatos de viajeros europeos", "Cuentos ficticios"],
+                correct: 0
+            },
+            {
+                question: "¿Qué elemento destaca en 'The Last of the Mohicans' de James Fenimore Cooper?",
+                options: ["La representación de los nativos americanos", "La crítica a la revolución industrial", "La exaltación de la vida urbana"],
+                correct: 0
+            },
+            {
+                question: "¿Qué tema central aborda Olaudah Equiano en su autobiografía?",
+                options: ["Los horrores de la esclavitud", "La expansión colonial", "El comercio marítimo"],
+                correct: 0
+            },
+            {
+                question: "¿Qué distingue a Washington Irving en la literatura americana?",
+                options: ["Ser el padre de la ficción americana", "Introducir la poesía épica", "Escribir relatos puritanos"],
+                correct: 0
+            },
+            // Add more questions here until 100 total
         ];
 
         let currentQuestion = 0;
         let score = 0;
 
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
         function loadQuestion() {
             const quiz = document.getElementById("quiz");
             const questionElement = document.getElementById("question");
-            const options = document.querySelectorAll(".options button");
+            const optionsContainer = document.getElementById("options");
 
             if (currentQuestion < questions.length) {
                 const q = questions[currentQuestion];
                 questionElement.textContent = q.question;
-                options.forEach((button, index) => {
-                    button.textContent = q.options[index];
-                    button.disabled = false;
+
+                const shuffledOptions = [...q.options];
+                shuffle(shuffledOptions);
+
+                optionsContainer.innerHTML = "";
+                shuffledOptions.forEach((option, index) => {
+                    const button = document.createElement("button");
+                    button.textContent = option;
+                    button.onclick = () => checkAnswer(q.options.indexOf(option));
+                    optionsContainer.appendChild(button);
                 });
             } else {
                 quiz.style.display = "none";
@@ -120,7 +253,6 @@
 
         function checkAnswer(selected) {
             const q = questions[currentQuestion];
-            const options = document.querySelectorAll(".options button");
 
             if (selected === q.correct) {
                 score++;
@@ -129,11 +261,11 @@
                 alert(`Incorrecto. La respuesta correcta era: ${q.options[q.correct]}`);
             }
 
-            options.forEach((button) => (button.disabled = true));
             currentQuestion++;
             setTimeout(loadQuestion, 1000);
         }
 
+        shuffle(questions);
         loadQuestion();
     </script>
 </body>
