@@ -666,6 +666,8 @@
 
         const shuffledOptions = q.options.map((option, index) => ({ option, index }));
         shuffle(shuffledOptions);
+        const correctIndex = shuffledOptions.findIndex(({ index }) => index === q.correct);
+
 
         optionsContainer.innerHTML = "";
         shuffledOptions.forEach(({ option, index }) => {
