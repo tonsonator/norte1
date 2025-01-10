@@ -656,43 +656,45 @@
         }
 
         function loadQuestion() {
-            const quiz = document.getElementById("quiz");
-            const questionElement = document.getElementById("question");
-            const optionsContainer = document.getElementById("options");
+    const quiz = document.getElementById("quiz");
+    const questionElement = document.getElementById("question");
+    const optionsContainer = document.getElementById("options");
 
-            if (currentQuestion < questions.length) {
-                const q = questions[currentQuestion];
-                questionElement.textContent = q.question;
+    if (currentQuestion < questions.length) {
+        const q = questions[currentQuestion];
+        questionElement.textContent = q.question;
 
-                const shuffledOptions = [...q.options];
-                shuffle(shuffledOptions);
+        const shuffledOptions = q.options.map((option, index) => ({ option, index }));
+        shuffle(shuffledOptions);
 
-                optionsContainer.innerHTML = "";
-                shuffledOptions.forEach((option, index) => {
-                    const button = document.createElement("button");
-                    button.textContent = option;
-                    button.onclick = () => checkAnswer(q.options.indexOf(option));
-                    optionsContainer.appendChild(button);
-                });
-            } else {
-                quiz.style.display = "none";
-                document.getElementById("result").textContent = `Has finalizado el cuestionario. Puntaje: ${score}/${questions.length}`;
-            }
-        }
+        optionsContainer.innerHTML = "";
+        shuffledOptions.forEach(({ option, index }) => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.setAttribute("data-index", index); // Guardar índice original
+            button.onclick = () => checkAnswer(parseInt(button.getAttribute("data-index")));
+            optionsContainer.appendChild(button);
+        });
+    } else {
+        quiz.style.display = "none";
+        document.getElementById("result").textContent = `Has finalizado el cuestionario. Puntaje: ${score}/${questions.length}`;
+    }
+}
 
-        function checkAnswer(selected) {
-            const q = questions[currentQuestion];
+function checkAnswer(selected) {
+    const q = questions[currentQuestion];
 
-            if (selected === q.correct) {
-                score++;
-                alert("¡Correcto!");
-            } else {
-                alert(`Incorrecto. La respuesta correcta era: ${q.options[q.correct]}`);
-            }
+    if (selected === q.correct) {
+        score++;
+        alert("¡Correcto!");
+    } else {
+        alert(`Incorrecto. La respuesta correcta era: ${q.options[q.correct]}`);
+    }
 
-            currentQuestion++;
-            setTimeout(loadQuestion, 1000);
-        }
+    currentQuestion++;
+    setTimeout(loadQuestion, 1000);
+}
+
 
         shuffle(questions);
         loadQuestion();
